@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": { "model": "tutorialmod:block/lightning_jumper" },
+		"facing=south": { "model": "tutorialmod:block/lightning_jumper", "y": 180 },
+		"facing=west": { "model": "tutorialmod:block/lightning_jumper", "y": 270 },
+		"facing=east": { "model": "tutorialmod:block/lightning_jumper", "y": 90 }
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": { "model": "tutorialmod:block/toilet" },
+		"facing=south": { "model": "tutorialmod:block/toilet", "y": 180 },
+		"facing=west": { "model": "tutorialmod:block/toilet", "y": 270 },
+		"facing=east": { "model": "tutorialmod:block/toilet", "y": 90 }
+	}
+}

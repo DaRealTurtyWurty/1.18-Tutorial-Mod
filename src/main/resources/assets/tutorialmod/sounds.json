@@ -1,0 +1,25 @@
+{
+	"entity.example_entity.ambient": {
+		"sounds": [
+			"tutorialmod:example_entity_ambient"
+		]
+	},
+	
+	"entity.example_entity.death": {
+		"sounds": [
+			"tutorialmod:example_entity_death"
+		]
+	},
+	
+	"entity.example_entity.hurt": {
+		"sounds": [
+			"tutorialmod:example_entity_hurt"
+		]
+	},
+	
+	"block.toilet.fart": {
+		"sounds": [
+			"tutorialmod:fart"
+		]
+	}
+}

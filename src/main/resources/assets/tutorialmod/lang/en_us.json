@@ -1,0 +1,21 @@
+{
+	"item.tutorialmod.example_item": "Example Item",
+	"block.tutorialmod.example_block": "Example Block",
+	"entity.tutorialmod.example_entity": "Example Entity",
+	"item.tutorialmod.example_entity_spawn_egg": "Spawn Example Entity",
+	"itemGroup.tutorialmod": "Tutorial Mod",
+	"item.tutorialmod.clicker": "Clicker",
+	"block.tutorialmod.lightning_jumper": "Lightning Jumper",
+	"block.tutorialmod.toilet": "Toilet",
+	"item.tutorialmod.beans": "Beans",
+	"item.tutorialmod.bean_sword": "Bean-Infused Sword",
+	"item.tutorialmod.bean_pickaxe": "Bean-Infused Pickaxe",
+	"item.tutorialmod.bean_shovel": "Bean-Infused Shovel",
+	"item.tutorialmod.bean_axe": "Bean-Infused Axe",
+	"item.tutorialmod.bean_hoe": "Bean-Infused Hoe",
+	"item.tutorialmod.bean_helmet": "Bean-Infused Helmet",
+	"item.tutorialmod.bean_chestplate": "Bean-Infused Chestplate",
+	"item.tutorialmod.bean_leggings": "Bean-Infused Leggings",
+	"item.tutorialmod.bean_boots": "Bean-Infused Boots",
+	"key.tutorialmod.example_key": "Example Key"
+}
