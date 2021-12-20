@@ -5,6 +5,8 @@ import io.github.darealturtywurty.tutorialmod.common.entity.ExampleEntity;
 import io.github.darealturtywurty.tutorialmod.core.init.EntityInit;
 import io.github.darealturtywurty.tutorialmod.core.init.PacketHandler;
 import io.github.darealturtywurty.tutorialmod.core.world.OreGeneration;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,8 +18,12 @@ public class CommonModEvents {
 
     @SubscribeEvent
     public static void commonSetup(FMLCommonSetupEvent event) {
-        event.enqueueWork(OreGeneration::registerOres);
-        event.enqueueWork(PacketHandler::init);
+        event.enqueueWork(() -> {
+            OreGeneration.registerOres();
+            PacketHandler.init();
+            SpawnPlacements.register(EntityInit.EXAMPLE_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
+                    Heightmap.Types.WORLD_SURFACE, ExampleEntity::canSpawn);
+        });
     }
 
     @SubscribeEvent
