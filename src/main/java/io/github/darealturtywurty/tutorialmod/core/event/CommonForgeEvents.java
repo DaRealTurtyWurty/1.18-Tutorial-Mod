@@ -8,9 +8,11 @@ import io.github.darealturtywurty.tutorialmod.core.init.EntityInit;
 import io.github.darealturtywurty.tutorialmod.core.world.OreGeneration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.MobSpawnSettings.SpawnerData;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -33,6 +35,13 @@ public class CommonForgeEvents {
         if (event.getName().equals(new ResourceLocation("minecraft:plains"))) {
             event.getSpawns().addSpawn(MobCategory.CREATURE,
                     new SpawnerData(EntityInit.EXAMPLE_ENTITY.get(), 5, 1, 7));
+        }
+    }
+
+    @SubscribeEvent
+    public static void burnTime(FurnaceFuelBurnTimeEvent event) {
+        if (event.getItemStack().getItem() == Items.BREAD) {
+            event.setBurnTime(500);
         }
     }
 }

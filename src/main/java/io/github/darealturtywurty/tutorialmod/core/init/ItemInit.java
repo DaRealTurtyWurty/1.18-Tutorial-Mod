@@ -2,6 +2,7 @@ package io.github.darealturtywurty.tutorialmod.core.init;
 
 import io.github.darealturtywurty.tutorialmod.TutorialMod;
 import io.github.darealturtywurty.tutorialmod.common.item.ClickerItem;
+import io.github.darealturtywurty.tutorialmod.common.item.FuelItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -23,8 +24,9 @@ public final class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
             TutorialMod.MODID);
 
-    public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item",
-            () -> new Item(new Item.Properties().tab(TutorialMod.TUTORIAL_TAB).fireResistant()));
+    public static final RegistryObject<FuelItem> EXAMPLE_ITEM = ITEMS.register("example_item",
+            () -> new FuelItem(new Item.Properties().tab(TutorialMod.TUTORIAL_TAB).fireResistant(),
+                    (stack, recipe) -> 300));
 
     public static final RegistryObject<ClickerItem> CLICKER = ITEMS.register("clicker",
             () -> new ClickerItem(new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
