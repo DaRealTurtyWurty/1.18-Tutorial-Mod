@@ -32,36 +32,30 @@ public final class ItemInit {
             () -> new ClickerItem(new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     public static final RegistryObject<ForgeSpawnEggItem> EXAMPLE_ENTITY_SPAWN_EGG = ITEMS
-            .register("example_entity_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.EXAMPLE_ENTITY,
-                    0x1E51ED, 0x34BD27, new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+            .register("example_entity_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.EXAMPLE_ENTITY, 0x1E51ED,
+                    0x34BD27, new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     public static final RegistryObject<Item> BEANS = ITEMS.register("beans",
             () -> new Item(new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)
                     .food(new FoodProperties.Builder().nutrition(5).saturationMod(4.5f)
                             .effect(() -> new MobEffectInstance(MobEffects.JUMP, 360, 4), 0.7f)
-                            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 500, 2), 0.2f)
-                            .build())));
+                            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 500, 2), 0.2f).build())));
 
     // Tools
     public static final RegistryObject<SwordItem> BEAN_SWORD = ITEMS.register("bean_sword",
-            () -> new SwordItem(ToolMaterialInit.BEANS, 20, 5f,
-                    new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+            () -> new SwordItem(ToolMaterialInit.BEANS, 20, 5f, new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     public static final RegistryObject<PickaxeItem> BEAN_PICKAXE = ITEMS.register("bean_pickaxe",
-            () -> new PickaxeItem(ToolMaterialInit.BEANS, 20, 5f,
-                    new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+            () -> new PickaxeItem(ToolMaterialInit.BEANS, 20, 5f, new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     public static final RegistryObject<ShovelItem> BEAN_SHOVEL = ITEMS.register("bean_shovel",
-            () -> new ShovelItem(ToolMaterialInit.BEANS, 20, 5f,
-                    new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+            () -> new ShovelItem(ToolMaterialInit.BEANS, 20, 5f, new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     public static final RegistryObject<AxeItem> BEAN_AXE = ITEMS.register("bean_axe",
-            () -> new AxeItem(ToolMaterialInit.BEANS, 20, 5f,
-                    new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+            () -> new AxeItem(ToolMaterialInit.BEANS, 20, 5f, new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     public static final RegistryObject<HoeItem> BEAN_HOE = ITEMS.register("bean_hoe",
-            () -> new HoeItem(ToolMaterialInit.BEANS, 20, 5f,
-                    new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+            () -> new HoeItem(ToolMaterialInit.BEANS, 20, 5f, new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     // Armor
     public static final RegistryObject<ArmorItem> BEAN_HELMET = ITEMS.register("bean_helmet",
@@ -82,15 +76,19 @@ public final class ItemInit {
 
     // Block Items
     public static final RegistryObject<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block",
-            () -> new BlockItem(BlockInit.EXAMPLE_BLOCK.get(),
-                    new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+            () -> new BlockItem(BlockInit.EXAMPLE_BLOCK.get(), new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
-    public static final RegistryObject<BlockItem> LIGHTNING_JUMPER_BLOCK_ITEM = ITEMS
-            .register("lightning_jumper", () -> new BlockItem(BlockInit.LIGHTNING_JUMPER.get(),
-                    new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+    public static final RegistryObject<BlockItem> LIGHTNING_JUMPER_BLOCK_ITEM = ITEMS.register("lightning_jumper",
+            () -> new BlockItem(BlockInit.LIGHTNING_JUMPER.get(), new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     public static final RegistryObject<BlockItem> TOILET_BLOCK_ITEM = ITEMS.register("toilet",
             () -> new BlockItem(BlockInit.TOILET.get(), new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+    
+    public static final RegistryObject<BlockItem> DRAWER_BLOCK_ITEM = ITEMS.register("drawer",
+            () -> new BlockItem(BlockInit.DRAWER.get(), new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
+
+    public static final RegistryObject<BlockItem> EXAMPLE_CHEST_BLOCK_ITEM = ITEMS.register("example_chest",
+            () -> new BlockItem(BlockInit.EXAMPLE_CHEST.get(), new Item.Properties().tab(TutorialMod.TUTORIAL_TAB)));
 
     private ItemInit() {
     }

@@ -54,7 +54,7 @@ public class ToiletBlockEntity extends BlockEntity {
 
     @Override
     public CompoundTag getUpdateTag() {
-        return save(new CompoundTag());
+        return serializeNBT();
     }
 
     @Override
@@ -88,8 +88,8 @@ public class ToiletBlockEntity extends BlockEntity {
     }
 
     @Override
-    public CompoundTag save(CompoundTag nbt) {
-        super.save(nbt);
+    public void saveAdditional(CompoundTag nbt) {
+        super.saveAdditional(nbt);
 
         final var playerUses = new ListTag();
         this.playerUses.forEach((uuid, uses) -> {
@@ -100,7 +100,6 @@ public class ToiletBlockEntity extends BlockEntity {
         });
 
         nbt.put("PlayerUseMap", playerUses);
-        return nbt;
     }
 
     @Override
@@ -122,8 +121,8 @@ public class ToiletBlockEntity extends BlockEntity {
     public void tick() {
         if (this.isShitting) {
             if (this.fartTicker <= 0) {
-                this.level.playSound((Player) null, this.worldPosition, SoundInit.FART.get(),
-                        SoundSource.BLOCKS, 1.0f, 1.0f);
+                this.level.playSound((Player) null, this.worldPosition, SoundInit.FART.get(), SoundSource.BLOCKS, 1.0f,
+                        1.0f);
             }
 
             if (++this.fartTicker >= FART_TIME) {
@@ -131,8 +130,7 @@ public class ToiletBlockEntity extends BlockEntity {
                 this.fartTicker = 0;
                 this.seat.ejectPassengers();
                 PacketHandler.INSTANCE.send(
-                        PacketDistributor.TRACKING_CHUNK
-                                .with(() -> this.level.getChunkAt(this.worldPosition)),
+                        PacketDistributor.TRACKING_CHUNK.with(() -> this.level.getChunkAt(this.worldPosition)),
                         new ClientboundUpdateToiletPacket(this.worldPosition));
             }
         }
