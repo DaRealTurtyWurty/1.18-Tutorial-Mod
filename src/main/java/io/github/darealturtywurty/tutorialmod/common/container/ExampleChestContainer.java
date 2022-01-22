@@ -27,22 +27,24 @@ public class ExampleChestContainer extends AbstractContainerMenu {
     public ExampleChestContainer(int id, Inventory playerInv, IItemHandler slots, BlockPos pos) {
         super(ContainerInit.EXAMPLE_CHEST.get(), id);
         this.containerAccess = ContainerLevelAccess.create(playerInv.player.level, pos);
-
+        
         final int slotSizePlus2 = 18, startX = 8, startY = 86, hotbarY = 144, inventoryY = 18;
         
-        for (int column = 0; column < 9; column++) {
-            for (int row = 0; row < 3; row++) {
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 9; column++) {
                 addSlot(new SlotItemHandler(slots, row * 9 + column, startX + column * slotSizePlus2,
                         inventoryY + row * slotSizePlus2));
             }
         }
-
-        for (int column = 0; column < 9; column++) {
-            for (int row = 0; row < 3; row++) {
+        
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 9; column++) {
                 addSlot(new Slot(playerInv, 9 + row * 9 + column, startX + column * slotSizePlus2,
                         startY + row * slotSizePlus2));
             }
+        }
 
+        for (int column = 0; column < 9; column++) {
             addSlot(new Slot(playerInv, column, startX + column * slotSizePlus2, hotbarY));
         }
     }
@@ -50,7 +52,7 @@ public class ExampleChestContainer extends AbstractContainerMenu {
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
         var retStack = ItemStack.EMPTY;
-        final Slot slot = this.slots.get(index);
+        final Slot slot = getSlot(index);
         if (slot.hasItem()) {
             final ItemStack item = slot.getItem();
             retStack = item.copy();
@@ -59,14 +61,14 @@ public class ExampleChestContainer extends AbstractContainerMenu {
                     return ItemStack.EMPTY;
             } else if (!moveItemStackTo(item, 0, 27, false))
                 return ItemStack.EMPTY;
-            
+
             if (item.isEmpty()) {
                 slot.set(ItemStack.EMPTY);
             } else {
                 slot.setChanged();
             }
         }
-        
+
         return retStack;
     }
 
