@@ -1,0 +1,8 @@
+{
+	"parent": "block/orientable",
+	"textures": {
+		"front": "tutorialmod:blocks/drawer_front",
+		"side": "tutorialmod:blocks/drawer_side",
+		"top": "tutorialmod:blocks/drawer_side"
+	}
+}

@@ -2,6 +2,7 @@ package io.github.darealturtywurty.tutorialmod.core.init;
 
 import io.github.darealturtywurty.tutorialmod.TutorialMod;
 import io.github.darealturtywurty.tutorialmod.common.container.ExampleChestContainer;
+import io.github.darealturtywurty.tutorialmod.common.container.PoopStorageContainer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,6 +14,9 @@ public final class ContainerInit {
 
     public static final RegistryObject<MenuType<ExampleChestContainer>> EXAMPLE_CHEST = CONTAINERS
             .register("example_chest", () -> new MenuType<>(ExampleChestContainer::new));
+    
+    public static final RegistryObject<MenuType<PoopStorageContainer>> POOP_STORAGE = CONTAINERS
+            .register("poop_storage", () -> new MenuType<>(PoopStorageContainer::new));
     
     private ContainerInit() {
     }

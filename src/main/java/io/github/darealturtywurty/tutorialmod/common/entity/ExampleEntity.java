@@ -32,59 +32,56 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 
 public class ExampleEntity extends Animal {
-
     private static final ResourceLocation LOOT_TABLE = new ResourceLocation(TutorialMod.MODID,
             "entities/example_entity");
-
+    
     public ExampleEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
     }
-
-    public static boolean canSpawn(EntityType<ExampleEntity> entity, LevelAccessor levelAccess,
-            MobSpawnType spawnType, BlockPos pos, Random random) {
-        return checkAnimalSpawnRules(entity, levelAccess, spawnType, pos, random) && pos.getY() > 70;
-    }
-
-    public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 50.0D).add(Attributes.MOVEMENT_SPEED,
-                0.24D);
-    }
-
+    
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob parent) {
         return EntityInit.EXAMPLE_ENTITY.get().create(level);
     }
-
+    
     @Override
     protected SoundEvent getAmbientSound() {
         return SoundInit.EXAMPLE_ENTITY_AMBIENT.get();
     }
-
+    
     @Override
     protected SoundEvent getDeathSound() {
         return SoundInit.EXAMPLE_ENTITY_DEATH.get();
     }
-
+    
     @Override
     protected ResourceLocation getDefaultLootTable() {
         return LOOT_TABLE;
     }
-
+    
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
         return SoundInit.EXAMPLE_ENTITY_HURT.get();
     }
-
+    
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
         this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(4,
-                new TemptGoal(this, 1.2D, Ingredient.of(ItemInit.EXAMPLE_ITEM.get()), false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(ItemInit.EXAMPLE_ITEM.get()), false));
         this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1D));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+    }
+    
+    public static boolean canSpawn(EntityType<ExampleEntity> entity, LevelAccessor levelAccess, MobSpawnType spawnType,
+            BlockPos pos, Random random) {
+        return checkAnimalSpawnRules(entity, levelAccess, spawnType, pos, random) && pos.getY() > 70;
+    }
+    
+    public static AttributeSupplier.Builder createAttributes() {
+        return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 50.0D).add(Attributes.MOVEMENT_SPEED, 0.24D);
     }
 }

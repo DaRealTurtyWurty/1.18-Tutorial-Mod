@@ -18,5 +18,10 @@
 	"item.tutorialmod.bean_leggings": "Bean-Infused Leggings",
 	"item.tutorialmod.bean_boots": "Bean-Infused Boots",
 	"key.tutorialmod.example_key": "Example Key",
-	"container.tutorialmod.example_chest": "Example Chest"
+	"block.tutorialmod.drawer": "Drawer",
+	"container.tutorialmod.example_chest": "Example Chest",
+	"block.tutorialmod.example_chest": "Example Chest",
+	"container.tutorialmod.poop_storage": "Poop Storage",
+	"block.tutorialmod.poop_storage": "Poop Storage",
+	"item.tutorialmod.poop": "Poop"
 }
