@@ -1,7 +1,7 @@
 package io.github.darealturtywurty.tutorialmod.core.init;
 
 import io.github.darealturtywurty.tutorialmod.TutorialMod;
-import io.github.darealturtywurty.tutorialmod.core.BaseArmorMaterial;
+import io.github.darealturtywurty.tutorialmod.core.util.BaseArmorMaterial;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;

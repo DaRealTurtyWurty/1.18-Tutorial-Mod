@@ -24,8 +24,6 @@ public class ExampleChestScreen extends AbstractContainerScreen<ExampleChestCont
         super(container, playerInv, title);
         this.leftPos = 0;
         this.topPos = 0;
-        this.imageWidth = 176;
-        this.imageHeight = 168;
     }
 
     @Override

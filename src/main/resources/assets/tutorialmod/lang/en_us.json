@@ -23,5 +23,10 @@
 	"block.tutorialmod.example_chest": "Example Chest",
 	"container.tutorialmod.poop_storage": "Poop Storage",
 	"block.tutorialmod.poop_storage": "Poop Storage",
-	"item.tutorialmod.poop": "Poop"
+	"item.tutorialmod.poop": "Poop",
+	"block.tutorialmod.display_hand": "Hand Displayer",
+	"block.tutorialmod.energy_storage": "Energy Storage",
+	"block.tutorialmod.energy_generator": "Energy Generator",
+	"container.tutorialmod.energy_storage": "Energy Storage",
+	"container.tutorialmod.energy_generator": "Energy Generator"
 }

@@ -1,7 +1,10 @@
 package io.github.darealturtywurty.tutorialmod.core.init;
 
 import io.github.darealturtywurty.tutorialmod.TutorialMod;
+import io.github.darealturtywurty.tutorialmod.common.block.DisplayHandBlock;
 import io.github.darealturtywurty.tutorialmod.common.block.DrawerBlock;
+import io.github.darealturtywurty.tutorialmod.common.block.EnergyGeneratorBlock;
+import io.github.darealturtywurty.tutorialmod.common.block.EnergyStorageBlock;
 import io.github.darealturtywurty.tutorialmod.common.block.ExampleChestBlock;
 import io.github.darealturtywurty.tutorialmod.common.block.LightningJumperBlock;
 import io.github.darealturtywurty.tutorialmod.common.block.PoopStorageBlock;
@@ -30,7 +33,7 @@ public final class BlockInit {
 
     public static final RegistryObject<ToiletBlock> TOILET = BLOCKS.register("toilet",
             () -> new ToiletBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK).noOcclusion().dynamicShape()));
-    
+
     public static final RegistryObject<DrawerBlock> DRAWER = BLOCKS.register("drawer",
             () -> new DrawerBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
 
@@ -39,6 +42,15 @@ public final class BlockInit {
 
     public static final RegistryObject<PoopStorageBlock> POOP_STORAGE = BLOCKS.register("poop_storage",
             () -> new PoopStorageBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)));
+
+    public static final RegistryObject<DisplayHandBlock> DISPLAY_HAND = BLOCKS.register("display_hand",
+            () -> new DisplayHandBlock(BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    
+    public static final RegistryObject<EnergyStorageBlock> ENERGY_STORAGE = BLOCKS.register("energy_storage",
+            () -> new EnergyStorageBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+
+    public static final RegistryObject<EnergyGeneratorBlock> ENERGY_GENERATOR = BLOCKS.register("energy_generator",
+            () -> new EnergyGeneratorBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     private BlockInit() {
     }

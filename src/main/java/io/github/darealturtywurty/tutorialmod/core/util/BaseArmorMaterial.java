@@ -1,4 +1,4 @@
-package io.github.darealturtywurty.tutorialmod.core;
+package io.github.darealturtywurty.tutorialmod.core.util;
 
 import java.util.function.Supplier;
 

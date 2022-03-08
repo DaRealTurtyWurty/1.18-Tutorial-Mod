@@ -1,6 +1,6 @@
 package io.github.darealturtywurty.tutorialmod.core.init;
 
-import io.github.darealturtywurty.tutorialmod.core.BaseToolMaterial;
+import io.github.darealturtywurty.tutorialmod.core.util.BaseToolMaterial;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 

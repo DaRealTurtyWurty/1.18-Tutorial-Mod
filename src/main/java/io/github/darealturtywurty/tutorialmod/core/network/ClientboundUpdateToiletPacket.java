@@ -1,6 +1,5 @@
 package io.github.darealturtywurty.tutorialmod.core.network;
 
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
 import io.github.darealturtywurty.tutorialmod.client.ClientAccess;
@@ -11,7 +10,6 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.network.NetworkEvent;
 
 public class ClientboundUpdateToiletPacket {
-
     public final BlockPos toiletPos;
 
     public ClientboundUpdateToiletPacket(BlockPos pos) {
@@ -26,14 +24,10 @@ public class ClientboundUpdateToiletPacket {
         buffer.writeBlockPos(this.toiletPos);
     }
 
-    public boolean handle(Supplier<NetworkEvent.Context> ctx) {
-        final var success = new AtomicBoolean(false);
-        ctx.get().enqueueWork(() -> {
-            DistExecutor.unsafeRunWhenOn(Dist.CLIENT,
-                    () -> () -> success.set(ClientAccess.updateToilet(this.toiletPos)));
-        });
+    public void handle(Supplier<NetworkEvent.Context> ctx) {
+        ctx.get().enqueueWork(
+            () -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientAccess.updateToilet(this.toiletPos)));
 
         ctx.get().setPacketHandled(true);
-        return success.get();
     }
 }

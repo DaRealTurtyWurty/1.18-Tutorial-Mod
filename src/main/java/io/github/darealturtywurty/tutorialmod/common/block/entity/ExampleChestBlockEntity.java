@@ -1,6 +1,7 @@
 package io.github.darealturtywurty.tutorialmod.common.block.entity;
 
 import io.github.darealturtywurty.tutorialmod.TutorialMod;
+import io.github.darealturtywurty.tutorialmod.common.block.entity.util.InventoryBlockEntity;
 import io.github.darealturtywurty.tutorialmod.core.init.BlockEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
