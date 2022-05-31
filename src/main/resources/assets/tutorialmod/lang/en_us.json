@@ -28,5 +28,7 @@
 	"block.tutorialmod.energy_storage": "Energy Storage",
 	"block.tutorialmod.energy_generator": "Energy Generator",
 	"container.tutorialmod.energy_storage": "Energy Storage",
-	"container.tutorialmod.energy_generator": "Energy Generator"
+	"container.tutorialmod.energy_generator": "Energy Generator",
+	"item.tutorialmod.cropium": "Cropium",
+	"item.tutorialmod.cropium_seeds": "Cropium Seeds"
 }

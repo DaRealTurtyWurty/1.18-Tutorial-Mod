@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/crop",
+    "textures": {
+        "crop": "tutorialmod:blocks/cropium_stage6"
+    }
+}

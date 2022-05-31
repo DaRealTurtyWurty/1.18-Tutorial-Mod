@@ -25,30 +25,31 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = TutorialMod.MODID, bus = Bus.MOD, value = Dist.CLIENT)
 public final class ClientModEvents {
-    
+
     private ClientModEvents() {
     }
-    
+
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(BlockInit.LIGHTNING_JUMPER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockInit.DISPLAY_HAND.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockInit.CROPIUM.get(), RenderType.cutout());
         KeyInit.init();
         MenuScreens.register(ContainerInit.EXAMPLE_CHEST.get(), ExampleChestScreen::new);
         MenuScreens.register(ContainerInit.POOP_STORAGE.get(), PoopStorageScreen::new);
         MenuScreens.register(ContainerInit.ENERGY_GENERATOR.get(), EnergyGeneratorScreen::new);
     }
-    
+
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ExampleEntityModel.LAYER_LOCATION, ExampleEntityModel::createBodyLayer);
     }
-    
+
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityInit.EXAMPLE_ENTITY.get(), ExampleEntityRenderer::new);
         event.registerEntityRenderer(EntityInit.SEAT.get(), SeatRenderer::new);
-        
+
         event.registerBlockEntityRenderer(BlockEntityInit.DISPLAY_HAND.get(), DisplayHandBER::new);
     }
 }
